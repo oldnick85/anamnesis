@@ -1,0 +1,28 @@
+if((CMAKE_BUILD_TYPE STREQUAL RELEASE) OR (CMAKE_BUILD_TYPE STREQUAL Release))
+    find_package(Doxygen
+        REQUIRED dot)
+
+    find_package(LATEX)
+    set(DOXYGEN_OUTPUT_LANGUAGE ${DOCUMENTATION_LANGUAGE})
+    set(DOXYGEN_GENERATE_LATEX YES)
+    set(DOXYGEN_GENERATE_TODOLIST YES)
+    set(DOXYGEN_EXTRA_PACKAGES amssymb)
+    set(DOXYGEN_HTML_FILE_EXTENSION .xhtml)
+    set(DOXYGEN_IMAGE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/doc/)
+
+    doxygen_add_docs(doc
+        ${CMAKE_CURRENT_SOURCE_DIR}/doc/
+        ${CMAKE_CURRENT_SOURCE_DIR}/cmdlnargs/
+        ${CMAKE_CURRENT_SOURCE_DIR}/longnum/
+        ${CMAKE_CURRENT_SOURCE_DIR}/resources/
+        ${CMAKE_CURRENT_SOURCE_DIR}/select/
+        ${CMAKE_CURRENT_SOURCE_DIR}/anamnesis_trm/
+        ${CMAKE_CURRENT_SOURCE_DIR}/anamnesis_gui_qt/)
+
+    add_custom_target(doc_doxygen #ALL
+	COMMAND ${DOXYGEN_EXECUTABLE} Doxyfile.doc
+	WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+        COMMENT "Generating documentation with Doxygen"
+	VERBATIM )        
+
+endif((CMAKE_BUILD_TYPE STREQUAL RELEASE) OR (CMAKE_BUILD_TYPE STREQUAL Release))

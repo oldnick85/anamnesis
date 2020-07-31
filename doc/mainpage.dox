@@ -1,0 +1,23 @@
+/*! \mainpage ANAMNESIS
+ *
+ * \section sec_intro Введение
+ *
+ * Программа позволяет кодировать сложнозапоминаемые пароли с помощью ассоциаций и воспоминаний конкретного человека.
+ * Таким образом можно забыть пароль, но при этом его восстановить (если конечно не были забыты ключевые моменты жизни).
+ *
+ * \section sec_links Содержание
+ * \subsection subsec_links_for_user Пользователю
+ * - \ref page_usage
+ * - \ref page_questions_examples
+ * \subsection subsec_links_for_developer Разработчику
+ * - \ref page_devel
+ * - \ref page_work_scheme
+ * - \ref page_math
+ * - \ref todo
+ *
+ * \section sec_install Установка
+ *
+ * \section sec_usage Использование
+ *
+ */
+

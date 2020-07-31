@@ -1,0 +1,43 @@
+   =================
+   === ANAMNESIS ===
+   =================
+It is a program for encrypting passwords according to memories and associations.
+For more information, see the documentation (section B).
+
+   -----------------------------
+   --- A. Build and install ----
+   -----------------------------
+******** Linux:
+To build and install the program, follow these steps:
+  1.  Select build directory, its full path is denoted as {BUILD_DIR}, for example /tmp/anamnesis_build
+  2.  The directory in which the project is located will be denoted as {SOURCE_DIR}
+  3.  mkdir {BUILD_DIR} && cd {BUILD_DIR}
+  4.  cmake -DCMAKE_BUILD_TYPE=Release {SOURCE_DIR}
+  4.1 As a build option, you can specify the preferred language of documentation and interface: -DDEFAULT_LANGUAGE=ru или en (см. раздел L)
+  5.  cmake --build .
+  6.  cmake --build . --target install
+After that, you can run the program with the command /opt/anamnesis/anamnesis_trm
+******** Windows:
+...in the process of writing...
+
+
+   -----------------------------
+   --- B. Documentation ---------
+   -----------------------------
+******** Linux:
+To build documentation follow these steps (it is assumed that steps 1-4 of section A have been performed before):
+  1. cmake --build . --target doc
+  2. Open the file {BUILD_DIR}/html/index.html
+  3*. If you need PDF documentation, run the following command (LaTeX must be installed)
+  4*. You may need to install apt install texlive-lang-cyrillic
+  5*. cd {BUILD_DIR}/latex && make pdf
+  6*. Open the file {BUILD_DIR}/latex/refman.pdf
+******** Windows:
+...in the process of writing...
+
+   -----------------------------
+   --- L. Language support -----
+   -----------------------------
+At the moment, the program can work in Russian and English. 
+The documentation is available only in Russian. 
+Help in translating the project into other languages is appreciated!
