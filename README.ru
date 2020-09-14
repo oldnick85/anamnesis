@@ -20,6 +20,8 @@
       /opt/anamnesis/anamnesis_trm
 или (графический интерфейс)
       /opt/anamnesis/anamnesis_gui_qt
+Графическая версия по умолчанию собирается с Qt5. Чтобы собрать с Qt4 нужно использовать опцию ANAMNESIS_GUI_QT_VERSION:
+	cmake -DANAMNESIS_GUI_QT_VERSION=4 {SOURCE_DIR}
 ******** Windows:
 ...в процессе написания...
 
